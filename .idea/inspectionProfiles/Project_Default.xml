@@ -1,0 +1,68 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="15">
+            <item index="0" class="java.lang.String" itemvalue="google-api-python-client" />
+            <item index="1" class="java.lang.String" itemvalue="oauth2client" />
+            <item index="2" class="java.lang.String" itemvalue="aiogram-dialog" />
+            <item index="3" class="java.lang.String" itemvalue="environs" />
+            <item index="4" class="java.lang.String" itemvalue="aioredis" />
+            <item index="5" class="java.lang.String" itemvalue="aiogram-broadcaster" />
+            <item index="6" class="java.lang.String" itemvalue="apiclient" />
+            <item index="7" class="java.lang.String" itemvalue="aiogram" />
+            <item index="8" class="java.lang.String" itemvalue="httplib2" />
+            <item index="9" class="java.lang.String" itemvalue="jsmin" />
+            <item index="10" class="java.lang.String" itemvalue="typed-ast" />
+            <item index="11" class="java.lang.String" itemvalue="cffi" />
+            <item index="12" class="java.lang.String" itemvalue="cryptography" />
+            <item index="13" class="java.lang.String" itemvalue="zope.interface" />
+            <item index="14" class="java.lang.String" itemvalue="Pillow" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="typing.Coroutine.*" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="VulnerableLibrariesLocal" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="isIgnoringEnabled" value="true" />
+      <option name="ignoredModules">
+        <list>
+          <option value="django-ecommerce" />
+          <option value="django-ecommerce" />
+          <option value="django-ecommerce" />
+          <option value="django-ecommerce" />
+          <option value="django-ecommerce" />
+          <option value="django-ecommerce" />
+        </list>
+      </option>
+      <option name="ignoredPackages">
+        <list>
+          <option value="null:urllib3:1.25.3" />
+          <option value="null:sqlparse:0.2.4" />
+          <option value="null:requests:2.22.0" />
+          <option value="null:Django:2.2.4" />
+          <option value="null:certifi:2019.9.11" />
+          <option value="null:autobahn:19.8.1" />
+        </list>
+      </option>
+      <option name="ignoredReasons">
+        <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
