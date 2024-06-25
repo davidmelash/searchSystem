@@ -7,16 +7,15 @@ from django.db.models import QuerySet
 
 class Profile(models.Model):
     full_name = models.CharField()
-    phone_number = models.IntegerField()
-    data_of_birth = models.DateField()
-    address = models.TextField()
-    identification_number = models.IntegerField()
+    phone_number = models.IntegerField(unique=True)
+    data_of_birth = models.DateField(blank=True, null=True)
+    address = models.TextField(blank=True, null=True)
+    identification_number = models.IntegerField(unique=True, blank=True, null=True)
 
 
 class Contact(models.Model):
     full_name = models.CharField()
     phone_number = models.IntegerField(unique=True)
-    contact_id = models.IntegerField(unique=True)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 
