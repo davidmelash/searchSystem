@@ -1,0 +1,98 @@
+.grd-main {
+    background-image: linear-gradient(to bottom right, #E1EEB9, #CBE2AA, #92C3C5, #68ACDA);
+}
+
+.mx-lg-7 {
+    margin-right: 5rem !important;
+    margin-left: 5rem !important;
+}
+
+.icon-padding {
+    padding-top: 0.25rem !important;
+}
+
+html {
+    height: 100%;
+}
+
+.pe-lg-10 {
+    padding-right: 20rem !important;
+}
+
+/*TODO rename class to searchbar-container*/
+.search-btn-color {
+    color: #1a1d20;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.search-style-overwrite {
+    border: white;
+}
+
+#searchbar:focus {
+    border: white;
+    outline: white;
+}
+
+#searchbar-btn-click:focus {
+    border-color: white !important;
+}
+
+#searchbar-btn-click:hover {
+    border-color: white !important;
+    color: var(--bs-body-color);
+}
+
+#searchbar-btn-click:active {
+    border-color: white !important;
+}
+
+
+.searchbar-image {
+    padding-left: 25px !important;
+    background-image: url('../images/search.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    outline: 0;
+}
+
+.inner-searchbar-block {
+    border-left: 1px solid #bababa;
+    border-right: 1px solid #bababa;
+    padding-left: 20px;
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.dropdown-toggle::after {
+    outline: white !important;
+}
+
+
+.dropdown-toggle-custom {
+    white-space: nowrap !important;
+    width: 185px;
+    padding-left: 0px !important;
+    text-align: left;
+    border-color: white !important;
+}
+
+
+.dropdown-image-arrow {
+    background-image: url('../images/chevron-down.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    outline: 0;
+}
+
+.dropdown-left-setting {
+    width: 160px !important;
+    padding-left: 10px !important;
+}
+
+.dropdown-right-setting {
+    background-position: 160px 11px !important;
+}
+
