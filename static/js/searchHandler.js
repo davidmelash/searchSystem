@@ -3,6 +3,68 @@ $(document).ready(function () {
         $(this).closest(".dropdown-menu").prev(".dropdown-toggle-custom").text($(this).text());
     });
 
+    $(".searchbar-text-input").click(function () {
+
+        jQuery("#searchbar").val("");
+        jQuery("#datePicker").attr("id", "datePicker-block");
+    });
+
+    function renderProfiles(data) {
+        jQuery(".card-setting").empty();
+        for (let profile of data) {
+            let full_name = profile.full_name
+            let phone_number = profile.phone_number
+            let data_of_birth = profile.data_of_birth
+            let address = profile.address
+            let identification_number = profile.identification_number
+            let comments = profile.comments
+            let profile_pic = profile.profile_pic
+            let render_text = `
+            <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-2">
+                <img src="/media/${profile_pic}" class="img-fluid rounded-start" alt="Profile image" style="height: 100% !important;">
+            </div>
+            <div class="col">
+                <div class="card-body" style="height: 163px;">
+                    <div class="row mt-1">
+                        <div class="col-md-auto">
+                            <span class="col card-item">${full_name}</span>
+                        </div>
+                        <div class="col-md-auto">
+                            <span class="col card-item">${phone_number}</span>
+                        </div>
+                        <div class="col-md-auto">
+                            <span class="col card-item">${data_of_birth}</span>
+                        </div>
+
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-auto">
+                            <span class="col card-item">${address}</span>
+                        </div>
+                        <div class="col-md-auto">
+                            <span class="col card-item">ІПН ${identification_number}</span>
+                        </div>
+
+
+                    </div>
+                    <div class="row mt-4 card-item-comment">
+                        <div class="col">
+                            <span class="col">${comments}</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
+            jQuery(".card-setting").append(render_text);
+        }
+
+    }
+
 
     function getCookie(name) {
         let cookieValue = null;
@@ -47,6 +109,7 @@ $(document).ready(function () {
                 data: JSON.stringify(postData),  // Convert JavaScript object to JSON string
                 success: function (response) {
                     // Handle success response
+                    renderProfiles(response)
                     console.log('POST request successful');
                     console.log(response);
                 },

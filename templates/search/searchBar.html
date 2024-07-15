@@ -5,7 +5,8 @@
         <div class="d-flex flex-row mb-3 search-btn-color">
             <div class="p-2">
                 <div class="dropdown">
-                    <a class="btn dropdown-toggle-custom dropdown-image-arrow dropdown-left-setting" id="searchbar-btn-click" href="#" role="button"
+                    <a class="btn dropdown-toggle-custom dropdown-image-arrow dropdown-left-setting"
+                       id="searchbar-btn-click" href="#" role="button"
                        data-bs-toggle="dropdown"
                        aria-expanded="true">
                         Частковий збіг
@@ -22,25 +23,37 @@
                 <div class="form p-2">
                     <div class="inner-searchbar-block">
                         {#                        <span><img class="bi bi-search" src="{% static 'images/search.svg' %}" height="17" alt=""></span>#}
-                        <input type="text" id="searchbar"
-                               class="searchbar-image form-input p-2 pe-lg-10 search-style-overwrite"
-                               placeholder="Пошук">
+                        {#                        <input type="text" id="searchbar"#}
+                        {#                               class="searchbar-image form-input p-2 pe-lg-10 search-style-overwrite"#}
+                        {#                               placeholder="Пошук">#}
+                        <div class="input-group date" id="datePicker-block">
+                            <input type="text" id="searchbar"
+                                   class="searchbar-image form-input p-2 pe-lg-10 search-style-overwrite"
+                                   placeholder="Пошук">
+                            {#							 <input type="text" class="form-control" name="date" value="">#}
+                            <span class="input-group-addon">
+								  <i class="glyphicon glyphicon-calendar"></i>
+							 </span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="p-2">
                 <div class="dropdown">
-                    <a class="btn dropdown-toggle-custom dropdown-image-arrow dropdown-right-setting" id="searchbar-btn-click" href="#" role="button"
+                    <a class="btn dropdown-toggle-custom dropdown-image-arrow dropdown-right-setting"
+                       id="searchbar-btn-click" href="#" role="button"
                        data-bs-toggle="dropdown"
                        aria-expanded="true">
-                        Дата Народження
+                        Довільний текст
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">П.І.Б</a></li>
-                        <li><a class="dropdown-item" href="#">Номер Телефону</a></li>
-                        <li><a class="dropdown-item" href="#">Дата Народження</a></li>
-                        <li><a class="dropdown-item" href="#">ІПН</a></li>
-                        <li><a class="dropdown-item" href="#">Довільний текст</a></li>
+                        <li><a class="dropdown-item searchbar-text-input" href="#">П.І.Б</a></li>
+                        <li><a class="dropdown-item searchbar-text-input" href="#">Номер Телефону</a></li>
+                        <li><a class="dropdown-item" id="searchbar-date-input" href="#">Дата Народження</a></li>
+                        <li><a class="dropdown-item searchbar-text-input" href="#">ІПН</a></li>
+                        <li><a class="dropdown-item searchbar-text-input" href="#">Адреса</a></li>
+                        <li><a class="dropdown-item searchbar-text-input" href="#">Коментар</a></li>
+                        <li><a class="dropdown-item searchbar-text-input" href="#">Довільний текст</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,5 +63,6 @@
 
 </div>
 
+<div class="container mt-1 card-setting">
 
-
+</div>

@@ -96,3 +96,22 @@ html {
     background-position: 160px 11px !important;
 }
 
+.card-setting {
+    width: 960px;
+    height: 600px;
+    overflow: scroll;
+}
+
+.card-item {
+    border: 1px solid grey;
+    padding: 8px;
+    padding-right: 10px;
+    padding-left: 13px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.card-item-comment{
+    border-top: 1px solid grey;
+    padding: 10px
+}

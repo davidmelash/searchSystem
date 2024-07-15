@@ -11,6 +11,8 @@ class Profile(models.Model):
     data_of_birth = models.DateField(blank=True, null=True)
     address = models.TextField(blank=True, null=True)
     identification_number = models.IntegerField(unique=True, blank=True, null=True)
+    comments = models.TextField(blank=True, null=True)
+    profile_pic = models.ImageField(blank=True, null=True)
 
 
 class Contact(models.Model):

@@ -10,6 +10,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
 
 from .forms import SignupForm, LoginForm
+from .models import Profile
 from .search_engine import make_search
 
 
@@ -17,8 +18,7 @@ from .search_engine import make_search
 # Home page
 def index(request):
     if request.user.is_authenticated:
-        print('authenticated')
-        return render(request, 'search/index.html')
+        return render(request, 'search/index.html', )
     else:
         print('not authenticated')
         return render(request, 'auth/login.html')
@@ -61,3 +61,7 @@ def search(request):
     result = make_search(filter_type, entity_type, search_value)
     response = JsonResponse(list(result), safe=False)
     return response
+
+
+def get_profile(request):
+    return render(request, 'profile/index.html')
