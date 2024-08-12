@@ -7,7 +7,7 @@ from django.db.models import QuerySet
 
 class Profile(models.Model):
     full_name = models.CharField()
-    phone_number = models.IntegerField(unique=True)
+    phone_number = models.BigIntegerField(unique=True)
     data_of_birth = models.DateField(blank=True, null=True)
     address = models.TextField(blank=True, null=True)
     identification_number = models.IntegerField(unique=True, blank=True, null=True)

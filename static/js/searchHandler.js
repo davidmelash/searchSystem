@@ -19,11 +19,14 @@ $(document).ready(function () {
             let identification_number = profile.identification_number
             let comments = profile.comments
             let profile_pic = profile.profile_pic
+            profile_pic = profile.profile_pic ? `/media/${profile_pic}`: "/static/images/user_icon.png"
+            let profile_id = profile.id
             let render_text = `
+            <a href="/profile/${profile_id}" class="reset-link-style">
             <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-2">
-                <img src="/media/${profile_pic}" class="img-fluid rounded-start" alt="Profile image" style="height: 100% !important;">
+                <img src=${profile_pic} class="img-fluid rounded-start" alt="Profile image" style="height: 100% !important;">
             </div>
             <div class="col">
                 <div class="card-body" style="height: 163px;">
@@ -39,19 +42,21 @@ $(document).ready(function () {
                         </div>
 
                     </div>
-                    <div class="row mt-4">
-                        <div class="col-md-auto">
-                            <span class="col card-item">${address}</span>
+                    <div class="row" style="    margin-top: 18px;">
+                        <div class="col-md-auto " style="max-width: 550px;">
+                            <div class="card-item ">
+                            <div class="col single-line">${address}</div>
+                            </div>
                         </div>
-                        <div class="col-md-auto">
-                            <span class="col card-item">ІПН ${identification_number}</span>
+                        <div class="col-md-auto ">
+                            <div class="col card-item">ІПН ${identification_number}</div>
                         </div>
 
 
                     </div>
-                    <div class="row mt-4 card-item-comment">
-                        <div class="col">
-                            <span class="col">${comments}</span>
+                    <div class="row  card-item-comment">
+                        <div class="col single-line">
+                            <span class=" single-line">${comments}</span>
                         </div>
 
                     </div>
@@ -59,6 +64,7 @@ $(document).ready(function () {
             </div>
         </div>
     </div>
+    </a>
 `;
             jQuery(".card-setting").append(render_text);
         }
@@ -102,7 +108,7 @@ $(document).ready(function () {
             console.log(searchValue, "searchval")
             let postData = {"filterType": filterType, "entityType": entityType, "searchValue": searchValue};
             $.ajax({
-                url: 'http://localhost:8000/search/',  // Replace with your backend API endpoint
+                url: 'http://localhost:9000/search/',  // Replace with your backend API endpoint
                 type: 'POST',  // HTTP method
                 dataType: "json",
                 contentType: 'application/json',  // Type of data you are sending

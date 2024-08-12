@@ -1,15 +1,14 @@
 import json
 
 from django.http import JsonResponse
-from django.middleware.csrf import get_token
-from django.shortcuts import render
+
 
 # Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
+from django.views.decorators.csrf import csrf_exempt
 
-from .forms import SignupForm, LoginForm
+from .forms import LoginForm
 from .models import Profile
 from .search_engine import make_search
 
@@ -57,11 +56,13 @@ def search(request):
     filter_type = json_data.get("filterType").replace("\n", "").strip()
     entity_type = json_data.get("entityType").replace("\n", "").strip()
     search_value = json_data.get("searchValue").replace("\n", "").strip()
-    print(f"{filter_type}|{entity_type}|{search_value}|1")
     result = make_search(filter_type, entity_type, search_value)
     response = JsonResponse(list(result), safe=False)
     return response
 
 
-def get_profile(request):
-    return render(request, 'profile/index.html')
+def get_profile(request, profile_id):
+    print(profile_id)
+    profile = Profile.objects.get(pk=profile_id)
+
+    return render(request, 'profile/index.html', {"profile": profile})

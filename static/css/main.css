@@ -109,9 +109,118 @@ html {
     padding-left: 13px;
     border-radius: 15px;
     text-align: center;
+    max-width: 530px;
 }
 
-.card-item-comment{
-    border-top: 1px solid grey;
-    padding: 10px
+.card-item-comment {
+    border-top: 1px solid #bababa;
+    padding: 10px;
+    max-width: 750px;
+    margin-top: 15px;
+}
+
+.profile-buttons {
+    color: grey;
+    background-color: white;
+    border-color: white;
+    border-radius: 0px;
+    padding: 13px;
+}
+
+.profile-buttons:focus {
+    background-color: white !important;
+    border-color: white !important;
+}
+
+.profile-buttons:hover {
+    background-color: white !important;
+    border-color: white !important;
+    color: var(--bs-body-color);
+}
+
+.profile-buttons:active {
+    color: var(--bs-body-color);
+    background-color: white !important;
+    border-color: white !important;
+}
+
+.profile-buttons-edit {
+    border-right: 2px solid #bababa !important;
+}
+
+.profile-buttons-edit:hover {
+    border-right: 2px solid #bababa !important;
+}
+
+.profile-buttons-edit:active {
+    border-right: 2px solid #bababa !important;
+}
+
+.profile-buttons-edit:focus {
+    border-right: 2px solid #bababa !important;
+}
+
+.profile-container {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+}
+
+.profile-image-col {
+    width: 280px;
+    height: 220px;
+
+    /*background-color: white;*/
+    margin: 0px 20px 10px 0px;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0px !important;
+}
+
+.profile-contact-buttons {
+    padding: 25px;
+    background-color: white;
+    border-radius: 15px;
+    opacity: 70%;
+    color: grey;
+    width: 280px;
+}
+
+.profile-comments-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.profile-items {
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 0px 20px 10px 0px;
+}
+
+.profile-header {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+
+.reset-link-style {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.reset-link-style:hover {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.reset-link-style:focus {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.single-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
