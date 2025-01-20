@@ -2,14 +2,14 @@ version: '3.8'
 services:
   postgres:
     container_name: container-pg
-    image: postgres
-    hostname: localhost
+    image: postgres:14
+    hostname: 127.0.0.1
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: test_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: UF85q5uEHi
+      POSTGRES_DB: postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data
     restart: unless-stopped
@@ -25,6 +25,27 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: root
     restart: unless-stopped
+
+  django:
+    container_name: django-search
+    build: .
+    command: >
+      sh -c "python manage.py migrate && python manage.py create_user &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=postgres
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_PASS=UF85q5uEHi
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+
 
 volumes:
   postgres-data:
