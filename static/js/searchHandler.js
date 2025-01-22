@@ -108,7 +108,7 @@ $(document).ready(function () {
             console.log(searchValue, "searchval")
             let postData = {"filterType": filterType, "entityType": entityType, "searchValue": searchValue};
             $.ajax({
-                url: 'http://localhost:9000/search/',  // Replace with your backend API endpoint
+                url: 'http://localhost:8000/search/',  // Replace with your backend API endpoint
                 type: 'POST',  // HTTP method
                 dataType: "json",
                 contentType: 'application/json',  // Type of data you are sending
